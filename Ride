@@ -1,0 +1,46 @@
+/*
+ID: adi.sdb1 
+LANG: JAVA
+TASK: ride
+ */
+import java.util.*; 
+import java.io.*;
+
+class USACO1 {
+
+ /**
+  * @param args
+  */
+	public static void main(String[] args) throws IOException {
+		int multiply = 1;
+		int multiply1 = 1;
+
+	Scanner input = new Scanner(new File("ride.in"));
+    PrintWriter pw = new PrintWriter(new File("ride.out"));
+
+	String hello = input.nextLine();
+	
+	String hello1 = input.nextLine();
+	System.out.println(hello + hello1);
+	char[] chararray = hello.toCharArray();
+	char[] fivefootsevenandahalf = hello1.toCharArray();
+
+	for (int i = 0; i < chararray.length; i++) {
+		multiply = multiply * ((chararray[i] - 'A') +1);
+
+	}
+	for (int a = 0; a < fivefootsevenandahalf.length; a++) {
+		multiply1 = multiply1 * ((fivefootsevenandahalf[a] - 'A') +1);
+
+	}
+	if((multiply % 47) == (multiply1 % 47)){
+		pw.println("Go");
+	}else{
+		pw.println("Stay");
+	}
+    pw.close();
+
+
+ }
+
+}
